@@ -16,4 +16,6 @@ for num in range(3, 6, 1):
             for ra3 in range(0, 11, 5):
                 radius = radius_base * ra3 / 10.0
                 for stage in range(1, 3, 1):
+                    if height*stage > 4.9:
+                        continue
                     file.write(f"{num} {height:.2f} {width_up:.2f} {width_root:.2f} {stage} {radius:.2f} {num}_{stage}_{ra1}_{ra2}_{ra3}\n")
