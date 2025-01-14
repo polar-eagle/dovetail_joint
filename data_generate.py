@@ -13,6 +13,7 @@ for num in range(3, 6, 1):
         for ra2 in range(-5, 8, 4):
             height = width_base * (10.0 + ra2) / 10.0
             radius_base1 = height / (2.0*math.cos(math.atan2(height, (width_up - width_root)/2.0)) + 2.0) * 0.95
+            radius_base1 = min(radius_base1, width_up / 2.0 * math.tan(math.atan2(height, (width_up - width_root)/2.0) / 2.0) * 0.95)
             radius_base2 = (width_up - width_root) / 4.0 * math.tan(math.atan2(height, (width_up - width_root)/2.0) / 2.0) * 0.95
             radius_base2 = min(radius_base1, radius_base2)
             for ra3 in range(0, 11, 5):
